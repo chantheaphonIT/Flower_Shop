@@ -1,3 +1,22 @@
+.search {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://i2.wp.com/www.thinkafrica.fi/wp-content/uploads/2019/04/search-icon.png?fit=1200%2C1200&ssl=1&w=640');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search:focus {
+    width: 100%;
+}
+
 :root {
     --pink: #e84393;
 }
@@ -64,7 +83,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background-color: pink;
     padding: 2rem 9%;
     display: flex;
     align-items: center;
@@ -121,7 +140,7 @@ header .fa-bars {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background: url(../images/love.jpg) no-repeat;
+    background: url('../images/love.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -434,47 +453,8 @@ header .fa-bars {
     resize: none;
 }
 
-.footer .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.footer .box-container .box {
-    flex: 1 1 25rem;
-}
-
-.footer .box-container .box h3 {
-    color: #333;
-    font-size: 2.5rem;
-    padding: 1rem 0;
-}
-
-.footer .box-container .box a {
-    display: block;
-    color: #666;
-    font-size: 1.5rem;
-    padding: 1rem 0;
-}
-
-.footer .box-container .box a:hover {
-    color: var(--pink);
-    text-decoration: underline;
-}
-
-.footer .box-container .box img {
-    margin-top: 1rem;
-}
-
 .footer .credit {
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-    padding-top: 2.5rem;
-    font-size: 2rem;
-    color: #333;
-    border-top: .1rem solid rgba(0, 0, 0, .1);
-    padding-bottom: 9rem;
 }
 
 .footer .credit span {
