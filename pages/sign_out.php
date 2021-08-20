@@ -4,7 +4,7 @@
 <section class="contact" id="contact">
 <div class="row">
 
-    <form action="">
+    <form action="" >
         
         <input type="text" placeholder="name" class="box">
         <input type="email" placeholder="email" class="box">

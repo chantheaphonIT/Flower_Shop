@@ -3,86 +3,50 @@
  <!-- prodcuts section starts  -->
 <section class="products" id="products">
 
-<h1 class="heading"> latest <span>products</span> </h1>
-
-<div class="box-container">
-
-    <div class="box">
-        <span class="discount">-10%</span>
-        <div class="image">
-            <img src="images/img-1.jpg" alt="">
+        <h1 class="heading"> latest <span>products</span> </h1>
+        <form class="example" action="" method="post">
+        <input type="text"placeholder="Search by title" name = "search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="container p-4">
+                <div class="d-flex justify-content-end p-2">
+                <a href="create_customer.php" class="btn btn-primary">Add +</a>
+            </div>
+        <div class="box-container">
+            <?php
+                        require_once('database/database.php');
+                        $customers = "";
+                        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            //search//
+                            $customers = searchByName($_POST);
+                        }else{
+                            $customers = selectAllCustomers();
+                        }
+                        foreach($customers as $customer):
+                        ?>
             
-        </div>
-        <div class="content">
-            <h3>flower pot</h3>
-            <div class="price"> $12.99 <span>$15.99</span> </div>
-        </div>
-    </div>
+                        <div class="box">
+                            <span class="discount"><?= $customer['address']?></span>
+                            <div class="image">
+                                <img src="https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png" width="200" height="50" alt="">
+                                
+                            </div>
+                            <div class="content">
+                                <h3><?= $customer['name']?></h3>
+                                <div class="price"><?= $customer['phoneNumber']?></div>
+                                <a href="edit_customer.php?id=<?= $customer['customerID'] ?>" class="btn btn-primary btn-sm "><i class="fa fa-edit"></i></a>
+                                <a href="delet_customer.php?id=<?= $customer['customerID'] ?>"  style="background:#e84393"class="btn  btn-sm"><i class="fa fa-trash "></i></i></a>
+                                        
+                            </div>
+                        </div>
 
-    <div class="box">
-        <span class="discount">-15%</span>
-        <div class="image">
-            <img src="images/img-2.jpg" alt="">
+            
+
            
-        </div>
-        <div class="content">
-            <h3>flower pot</h3>
-            <div class="price"> $12.99 <span>$15.99</span> </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="discount">-5%</span>
-        <div class="image">
-            <img src="images/img-3.jpg" alt="">
             
-        </div>
-        <div class="content">
-            <h3>flower pot</h3>
-            <div class="price"> $12.99 <span>$15.99</span> </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="discount">-20%</span>
-        <div class="image">
-            <img src="images/img-4.jpg" alt="">
-           
-        </div>
-        <div class="content">
-            <h3>flower pot</h3>
-            <div class="price"> $12.99 <span>$15.99</span> </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="discount">-17%</span>
-        <div class="image">
-            <img src="images/img-5.jpg" alt="">
             
-        </div>
-        <div class="content">
-            <h3>flower pot</h3>
-            <div class="price"> $12.99 <span>$15.99</span> </div>
-        </div>
+            <?php endforeach; ?>
     </div>
-
-    <div class="box">
-        <span class="discount">-3%</span>
-        <div class="image">
-            <img src="images/img-6.jpg" alt="">
-            
-        </div>
-        <div class="content">
-            <h3>flower pot</h3>
-            <div class="price"> $12.99 <span>$15.99</span> </div>
-        </div>
-    </div>
-
-    
-    
-
-</div>
 
 </section>
 

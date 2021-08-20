@@ -1,18 +1,49 @@
 <br><br><br><br><br>
 <!-- contact section starts  -->
+<?php
+$host="localhost";
+$user="root";
+$password="";
+$db="flower_shop";
 
+$data=mysqli_connect($host,$user,$password,$db);
+if($data===false){
+    die('connection error');
+}
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $sql="select * from flower_shop where username='".$username."'AND passsword='".$password."'";
+    $result=mysqli_query($data,$sql);
+    $row=mysqli_fetch_array($result);
+    if($row["usertype"]=="flower_shop"){
+        $_SESSION["username"]=$username;
+        header("location:home.php");
+
+    }
+    elseif($row["usertype"]=="admin"){
+        $_SESSION["username"]=$username;
+        header("location:home.php");
+        
+    }else{
+        echo"username or password incorrect";
+    }
+}
+?>
 <section class="contact" id="contact">
-<h1 class="heading"> login <span>form</span> </h1>
+
 
 
 <div class="row">
 
-    <form action="">
+    <form action="#" method="POST">
+        <h1 class="heading"> login <span>form</span> </h1>
+     
+        <input type="text" placeholder="Name" class="box" required="">
+      
+       
+        <input type="password" placeholder="Password" class="box" required="">
         
-        <input type="text" placeholder="name" class="box">
-        <input type="email" placeholder="email" class="box">
-        <input type="number" placeholder="number" class="box">
-        <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
         <button type="submit" class="btn btn-block" style="background-color:#e84393">Login</button>
     </form>
 

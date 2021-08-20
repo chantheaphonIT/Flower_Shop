@@ -1,5 +1,5 @@
 <!-- home section starts  -->
-
+<? session_start();?>
 <section class="home" id="home">
 
 <div class="content">

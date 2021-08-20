@@ -13,15 +13,15 @@
     border: .1rem solid rgba(0, 0, 0, .1);
     position: relative;">
 <br>
-        <form action="create_flower_model.php" method="post" class='image'>
+        <form action="create_customer_model.php" method="post" class='image'>
             <div class="form-group">
-                <input type="text" class="form-control p-4" placeholder="Flower Name" name="name" required="">
+                <input type="text" class="form-control p-4" placeholder="Customer Name" name="name" required="">
             </div>
             <div class="form-group">
-                <input type="number" class="form-control p-4" placeholder="Flower Price" name="price" required="">
+                <input type="number" class="form-control p-4" placeholder="Phone Number" name="phoneNumber" required="">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control p-4" placeholder="Image URL" name="image" required="">
+                <input type="text" class="form-control p-4" placeholder="Address" name="address" required="">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-block" style="background-color:e84393">Create</button>
