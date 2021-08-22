@@ -1,4 +1,10 @@
 <?php 
+   session_start();
+   include "db_conn.php";
+    ?>
+
+<?php 
+
     include_once("partial/header.php");
     include_once("partial/navbar.php");
     if(isset($_GET['page'])){
@@ -12,8 +18,6 @@
             include_once('pages/customer_html.php');
         }elseif ($_GET['page'] == "login"){
             include_once('pages/login.php');
-        }elseif ($_GET['page'] == "sign_out"){
-            include_once('pages/sign_out.php');
         }
     }else {
         include_once('pages/home_html.php');

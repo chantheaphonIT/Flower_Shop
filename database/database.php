@@ -7,7 +7,7 @@
     }
 
     /**
-     * Create new book record
+     * Create new flower record
      */
     function createFlower($value) {
         $db = new mysqli('localhost', 'root', '', 'flower_shop');
@@ -17,6 +17,7 @@
         
         $dateTime = date("Y-m-d")." ".date("h:i:s");
      return db()->query("INSERT INTO flower(name, price, image,dateTime) VALUE('$name','$price','$image','$dateTime')");
+     
     }
    
 /**
@@ -27,8 +28,13 @@
         $name= $value['name'];
         $phoneNumber = $value['phoneNumber'];
         $address = $value['address'];
-       
-        return db()->query("INSERT INTO customer(name, phoneNumber, address) VALUE('$name','$phoneNumber','$address')");
+        $image=$_FILES['file']['name'];
+        $success= $db->query("INSERT INTO customer(name, phoneNumber, address,image) VALUE('$name','$phoneNumber','$address','$image')");
+        if($success){
+            header('Location: index.php?page=customer_html');
+        } else {
+            echo("Error: <br>" . $db->error);
+        }
     }
    
 

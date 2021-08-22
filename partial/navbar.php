@@ -13,14 +13,9 @@
           
             
         </nav>
-        <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn" type="submit" style="hieght:30px">Search</button>
-            </form> -->
+      
         <div class="icons">
-           
-            <a href="?page=sign_out"  class="fas fa-sign-out-alt">sign out</a>
-            <a href="?page=login" class="fas fa-user">login</a>
+            <a href="form.php" class="fas fa-user">login</a>
            
         </div>
 

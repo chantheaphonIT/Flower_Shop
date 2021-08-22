@@ -1,11 +1,10 @@
 <br><br><br><br><br>
-<!-- about section ends -->
- <!-- prodcuts section starts  -->
+ <!-- customer section starts  -->
 <section class="products" id="products">
 
-        <h1 class="heading"> latest <span>products</span> </h1>
+        <h1 class="heading"> Our <span>Customers</span> </h1>
         <form class="example" action="" method="post">
-        <input type="text"placeholder="Search by title" name = "search">
+        <input type="text"placeholder="Search by name" name = "search">
         <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <div class="container p-4">
@@ -28,7 +27,7 @@
                         <div class="box">
                             <span class="discount"><?= $customer['address']?></span>
                             <div class="image">
-                                <img src="https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png" width="200" height="50" alt="">
+                                <img src="images/<?= $customer['image'] ?>" width="200" height="50" alt="">
                                 
                             </div>
                             <div class="content">
@@ -38,7 +37,7 @@
                                 <a href="delet_customer.php?id=<?= $customer['customerID'] ?>"  style="background:#e84393"class="btn  btn-sm"><i class="fa fa-trash "></i></i></a>
                                         
                             </div>
-                        </div>
+                        </div><br>
 
             
 
@@ -50,4 +49,4 @@
 
 </section>
 
-<!-- prodcuts section ends -->
+<!-- customer section ends -->

@@ -2,6 +2,7 @@
 
 <section class="about" id="about" >
 <!-- The form -->
+<h1 class="heading"> Our <span>Products</span> </h1>
     <form class="example" action="" method="post">
         <input type="text"placeholder="Search by title" name = "search">
         <button type="submit"><i class="fa fa-search"></i></button>
