@@ -26,6 +26,7 @@
                 $flowers = selectAllFlowers();
                 }
                 foreach($flowers as $flower):
+                    $description = readMore($flower['description'], 20);
                 ?>
                         <div class="card m-2" style="background-color:pink;height:37%;magin-top:15%;flex: 1 1 30rem;
                                             box-shadow: 0 .5rem 0.5rem black;
@@ -42,7 +43,7 @@
                                             <strong><?= $flower['dateTime']?></strong> 
                                             <hr>
                                          
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores laboriosam praesentium enim maiores? Ad repellat voluptates alias facere repudiandae dolor accusamus enim ut odit, aliquam nesciunt eaque nulla dignissimos.</p>
+                                            <p><?=$description?>.Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Corrupti Asperiores Laboriosam Praesentium Enim Maiores? Ad Repellat Voluptates Alias Facere Repudiandae Dolor Accusamus Enim Ut Odit, Aliquam Nesciunt Eaque Nulla Dignissimos....<a href="detail.php?id=<?=$flower['flowerID']?>">Readmore</a></p>
                             
                                     </div>
                                     

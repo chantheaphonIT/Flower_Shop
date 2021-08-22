@@ -7,6 +7,7 @@
         <input type="text"placeholder="Search by name" name = "search">
         <button type="submit"><i class="fa fa-search"></i></button>
         </form>
+        
         <div class="container p-4">
                 <div class="d-flex justify-content-end p-2">
                 <a href="create_customer.php" class="btn btn-primary">Add +</a>

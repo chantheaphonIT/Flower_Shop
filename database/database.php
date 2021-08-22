@@ -14,10 +14,15 @@
         $name= $value['name'];
         $price = $value['price'];
         $image = $value['image']; 
-        
+        $description=$value['description'];
         $dateTime = date("Y-m-d")." ".date("h:i:s");
-     return db()->query("INSERT INTO flower(name, price, image,dateTime) VALUE('$name','$price','$image','$dateTime')");
-     
+        $success= $db->query("INSERT INTO flower(name, price, image,dateTime,description) VALUE('$name','$price','$image','$dateTime','$description')");
+        if($success){
+            header('Location: index.php?page=flower_html');
+
+        } else {
+            echo("Error: <br>" . $db->error);
+        }
     }
    
 /**
@@ -118,6 +123,7 @@ function searchBytitle($name) {
     return db()->query("SELECT * FROM flower where name like '%$name%'");
     
 }
+//read more//
 function readMore($text,$number){
     return substr($text,0,$number);    
   
